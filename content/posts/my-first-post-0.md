@@ -1,7 +1,8 @@
 ---
-title: "Angular something"
+title: "Angular something 0"
 date: 2018-08-10T08:04:50-06:00
 draft: true
+tags: ['tag1', 'tag2']
 ---
 
 # Title

@@ -2,6 +2,7 @@
 title: "Angular something 2"
 date: 2018-08-12T08:04:50-06:00
 draft: true
+tags: ["tag2"]
 ---
 
 # Title 2
