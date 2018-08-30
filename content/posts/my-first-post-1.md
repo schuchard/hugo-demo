@@ -1,7 +1,7 @@
 ---
 title: "Angular something 1"
 date: 2018-08-11T08:04:50-06:00
-draft: true
+draft: false
 ---
 
 # Title 1

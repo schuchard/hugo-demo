@@ -1,7 +1,7 @@
 ---
 title: "Angular something 2"
 date: 2018-08-12T08:04:50-06:00
-draft: true
+draft: false
 tags: ["tag2"]
 ---
 
