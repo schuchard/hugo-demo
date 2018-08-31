@@ -1,0 +1,6 @@
+{
+    "scripts": {
+        "build:local": "hugo --config config.toml,config.dev.toml",
+        "build:prod": "hugo --minify"
+    }
+}
