@@ -1,5 +1,4 @@
 baseURL = "https://kev.run"
 languageCode = "en-us"
 title = "Kevin Schuchard"
-theme = "hugo-paper"
 enableRobotsTXT = true
