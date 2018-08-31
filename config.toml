@@ -2,3 +2,4 @@ baseURL = "https://kev.run"
 languageCode = "en-us"
 title = "Kevin Schuchard"
 enableRobotsTXT = true
+sectionPagesMenu = "main"
