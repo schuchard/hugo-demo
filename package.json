@@ -1,6 +1,12 @@
 {
     "scripts": {
+        "clean": "rm -rf public",
+        "start": "hugo server -D",
         "build:local": "hugo --config config.toml,config.dev.toml",
+        "serve:local": "yarn clean && yarn build:local && http-server public -o",
         "build:prod": "hugo --minify"
+    },
+    "devDependencies": {
+        "http-server": "^0.11.1"
     }
 }
