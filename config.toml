@@ -3,3 +3,4 @@ languageCode = "en-us"
 title = "Kevin Schuchard"
 enableRobotsTXT = true
 sectionPagesMenu = "main"
+assetDir = "static"
