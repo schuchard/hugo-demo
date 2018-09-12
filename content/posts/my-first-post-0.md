@@ -105,20 +105,20 @@ tree.commitUpdate(recorder);
 I also faced another decision in determining how to set the latest Jest dependency versions. We didn’t want to hard code a value that required maintenance, so we decided to make an HTTP request to the npm registry and fetch the latest version. We created a method that accepts a package name and returns the latest package version. Mike Brocchi from the Angular CLI team was helpful in guiding our decision on how to implement this functionality. Fortunately, the input of a Schematic is synchronous, but the output can be asynchronous, and the schematics library will wait for everything to be done before starting the next step. Up to this point, our `Rule`’s have been synchronous, returning a `Tree`. For this `Rule`, we were able to return an `Observable<Tree>` and wait for the HTTP call.
 
 ```js
-    of('jest', 'jest-preset-angular`).pipe(
-        concatMap((packageName: string) => getLatestNodeVersion(packageName)),
-        map((packageFromRegistry: NodePackage) => {
-            const { name, version } = packageFromRegistry;
+of('jest', 'jest-preset-angular`).pipe(
+    concatMap((packageName: string) => getLatestNodeVersion(packageName)),
+    map((packageFromRegistry: NodePackage) => {
+        const { name, version } = packageFromRegistry;
 
-            addPackageJsonDependency(tree, {
-                type: NodeDependencyType.Dev,
-                name,
-                version,
-            });
+        addPackageJsonDependency(tree, {
+            type: NodeDependencyType.Dev,
+            name,
+            version,
+        });
 
-            return tree;
-        })
-    )
+        return tree;
+    })
+)
 ```
 
 The source code for `getLatestNodeVersion` can be found here and we have a PR open to the Angular CLI that will hopefully make this functionality available to everyone.
@@ -149,14 +149,20 @@ A few resources were key to developing this schematic. First was this excellent 
 
 We’re excited to see this project open-sourced and hope that the community helps us continue to improve and maintain it. Give it a try and let us know what you think. Github stars are welcomed and if you see any issues or ways to improve the schematic, please file an issue. You can use the schematic in you Angular CLI applications by running:
 
-`ng add @briebug/jest`
+```bash
+ng add @briebug/jest
+```
 
 Or install globally:
 
-`npm install -g @briebug/jest`
+```bash
+npm install -g @briebug/jest
+```
 
 Then in any Angular project directory:
 
-`ng g @briebug/jest:jest`
+```bash
+ng g @briebug/jest:jest
+```
 
 The source code can be found at: https://github.com/briebug/jest-schematic
