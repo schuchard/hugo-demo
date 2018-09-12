@@ -46,7 +46,7 @@ Once we have the AST node we can search for the properties we’d like to remove
 ```js
 export interface UpdateRecorder {
     insertLeft(index: number, content: Buffer | string): UpdateRecorder;
-    inserRight(index: number, content: Buffer | string): UpdateRecorder;
+    insertRight(index: number, content: Buffer | string): UpdateRecorder;
     remove(index: number, length: number): UpdateRecorder;
 }
 ```
