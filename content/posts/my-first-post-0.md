@@ -105,7 +105,7 @@ tree.commitUpdate(recorder);
 I also faced another decision in determining how to set the latest Jest dependency versions. We didn’t want to hard code a value that required maintenance, so we decided to make an HTTP request to the npm registry and fetch the latest version. We created a method that accepts a package name and returns the latest package version. Mike Brocchi from the Angular CLI team was helpful in guiding our decision on how to implement this functionality. Fortunately, the input of a Schematic is synchronous, but the output can be asynchronous, and the schematics library will wait for everything to be done before starting the next step. Up to this point, our `Rule`’s have been synchronous, returning a `Tree`. For this `Rule`, we were able to return an `Observable<Tree>` and wait for the HTTP call.
 
 ```js
-of('jest', 'jest-preset-angular`).pipe(
+of('jest', 'jest-preset-angular').pipe(
     concatMap((packageName: string) => getLatestNodeVersion(packageName)),
     map((packageFromRegistry: NodePackage) => {
         const { name, version } = packageFromRegistry;
